@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<scoreDef key.pname="c" key.mode="major">
+						<staffGrp>
+							<staffDef n="1" label="Voice" clef.line="2" clef.shape="G" meter.count="6" meter.unit="8"/>
+							<staffGrp barthru="true">
+								<staffDef n="2" label="Right hand" clef.line="2" clef.shape="G" meter.count="6" meter.unit="8"/>
+								<staffDef n="3" label="Left hand" clef.line="4" clef.shape="F" meter.count="6" meter.unit="8"/>
+							</staffGrp>
+						</staffGrp>
+					</scoreDef>
+					<section>
+						<mei:measure n="1">
+							<staff n="1">
+								<layer>
+									<rest xml:id="op36-e1-1" dur="4"></rest>
+									<rest xml:id="op36-e1-2" dur="8"></rest>
+									<rest xml:id="op36-e1-3" dur="4"></rest>
+									<rest xml:id="op36-e1-4" dur="8"></rest>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<rest xml:id="op36-e2" dur="8"></rest>
+									<beam>
+										<note xml:id="op36-e3" pname="d" oct="4" dur="8"></note>
+										<note xml:id="op36-e4" pname="d" oct="4" dur="8" tie="i"></note>
+									</beam>
+									<beam>
+										<note xml:id="op36-e5" pname="d" oct="4" dur="8" tie="t"></note>
+										<note xml:id="op36-e6" pname="d" oct="4" dur="8"></note>
+										<note xml:id="op36-e7" pname="d" oct="4" dur="8" tie="i"></note>
+									</beam>
+								</layer>
+							</staff>
+							<staff n="3">
+								<layer>
+									<beam>
+										<note xml:id="op36-e8a" pname="c" oct="4" dur="16" dots="1"></note>
+										<note xml:id="op36-e8b" pname="c" oct="4" dur="64"></note>
+										<note xml:id="op36-e8c" pname="c" oct="4" dur="64"></note>
+										<note xml:id="op36-e9" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e10" pname="c" oct="4" dur="8"></note>
+									</beam>
+									<beam>
+										<note xml:id="op36-e11" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e12" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e13" pname="c" oct="4" dur="8"></note>
+									</beam>
+								</layer>
+							</staff>
+							<tie startid="op36-e8a" endid="op36-e8b"/>
+							<tie startid="op36-e8b" endid="op36-e8c"/>
+						</mei:measure>
+						<measure n="2">
+							<staff n="1">
+								<layer>
+									<rest xml:id="op36-e14" dur="4"></rest>
+									<rest xml:id="op36-e15" dur="8"></rest>
+									<rest xml:id="op36-e16" dur="4"></rest>
+									<note xml:id="op36-e17" pname="d" oct="4" dur="8">
+										<syl>Ja</syl>
+									</note>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<beam>
+										<note xml:id="op36-e18" pname="d" oct="4" dur="8" tie="t"></note>
+										<note xml:id="op36-e19" pname="d" oct="4" dur="8"></note>
+										<note xml:id="op36-e20" pname="d" oct="4" dur="8" tie="i"></note>
+									</beam>
+									<beam>
+										<note xml:id="op36-e21" pname="d" oct="4" dur="8" tie="t"></note>
+										<note xml:id="op36-e22" pname="d" oct="4" dur="8"></note>
+										<note xml:id="op36-e23" pname="d" oct="4" dur="8" tie="i"></note>
+									</beam>
+								</layer>
+							</staff>
+							<staff n="3">
+								<layer>
+									<beam>
+										<note xml:id="op36-e24" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e25" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e26" pname="c" oct="4" dur="8"></note>
+									</beam>
+									<beam>
+										<note xml:id="op36-e27" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e28" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e29" pname="c" oct="4" dur="8"></note>
+									</beam>
+								</layer>
+							</staff>
+						</measure>
+						<scoreDef key.pname="c" key.mode="major" meter.count="3" meter.unit="4" />
+						<measure n="3">
+							<staff n="1">
+								<layer>
+									<note xml:id="op36-e30" pname="f" oct="4" dur="4">
+										<syl>svet</syl>
+									</note>
+									<note xml:id="op36-e31" pname="d" oct="4" dur="8">
+										<syl wordpos="i">za</syl>
+									</note>
+									<note xml:id="op36-e32" pname="g" oct="4" dur="4">
+										<syl wordpos="t">zhgu</syl>
+									</note>
+									<note xml:id="op36-e33" pname="e" accid="f" oct="4" dur="8">
+										<syl>Ja</syl>
+									</note>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<beam>
+										<note xml:id="op36-e34" pname="d" oct="4" dur="8" tie="t"></note>
+										<note xml:id="op36-e35" pname="d" oct="4" dur="8"></note>
+										<note xml:id="op36-e36" pname="d" oct="4" dur="8" tie="i"></note>
+									</beam>
+									<beam>
+										<note xml:id="op36-e37" pname="d" oct="4" dur="8" tie="t"></note>
+										<note xml:id="op36-e38" pname="e" accid="f" oct="4" dur="8"></note>
+										<note xml:id="op36-e39" pname="e" accid="f" oct="4" dur="8"></note>
+									</beam>
+								</layer>
+							</staff>
+							<staff n="3">
+								<layer>
+									<beam>
+										<note xml:id="op36-e40" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e41" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e42" pname="c" oct="4" dur="8"></note>
+									</beam>
+									<beam>
+										<note xml:id="op36-e43" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e44" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e45" pname="c" oct="4" dur="8" tie="i"></note>
+									</beam>
+								</layer>
+							</staff>
+							<hairpin xml:id="d1e352" startid="op36-e43" endid="op36-e45" form="cres" place="below" staff="3"/>
+						</measure>
+						<measure n="4">
+							<staff n="1">
+								<layer>
+									<note xml:id="op36-e46" pname="a" accid="f" oct="4" dur="4">
+										<syl>svet</syl>
+									</note>
+									<note xml:id="op36-e47" pname="b" accid="f" oct="4" dur="8">
+										<syl wordpos="i">za</syl>
+									</note>
+									<note xml:id="op36-e48" pname="c" oct="5" dur="4">
+										<syl wordpos="t">zhgu</syl>
+									</note>
+									<note xml:id="op36-e49" pname="d" oct="5" dur="8">
+										<syl>Ja</syl>
+									</note>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<chord>
+										<note xml:id="op36-e50" pname="a" accid="f" oct="4" dur="4" dots="1"></note>
+										<note xml:id="op36-e51" pname="e" accid="f" oct="4" dur="4" dots="1"></note>
+									</chord>
+									<chord>
+										<note xml:id="op36-e52" pname="c" accid="f" oct="5" dur="4"></note>
+										<note xml:id="op36-e53" pname="a" accid="f" oct="4" dur="4"></note>
+										<note xml:id="op36-e54" pname="e" oct="4" dur="4"></note>
+									</chord>
+									<note xml:id="op36-e55" pname="d" accid="f" oct="5" dur="8"></note>
+								</layer>
+							</staff>
+							<staff n="3">
+								<layer>
+									<beam>
+										<note xml:id="op36-e56" pname="c" oct="4" dur="8" tie="t"></note>
+										<note xml:id="op36-e57" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e58" pname="c" oct="4" dur="8" tie="i"></note>
+									</beam>
+									<beam>
+										<note xml:id="op36-e59" pname="c" oct="4" dur="8" tie="t"></note>
+										<note xml:id="op36-e60" pname="c" oct="4" dur="8"></note>
+										<note xml:id="op36-e61" pname="c" oct="4" dur="8" tie="i"></note>
+									</beam>
+								</layer>
+							</staff>
+						</measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

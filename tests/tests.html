@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:mei="http://www.music-encoding.org/ns/mei"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:mo="http://purl.org/ontology/mo/"
+xmlns:mo-i="http://purl.org/ontology/mo-imaginary/"
+xmlns:event="http://purl.org/NET/c4dm/event.owl"
+version="HTML+RDFa 1.0" xml:lang="en">
+	<head>
+		<title>MEI-to-VexFlow Test Page</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/JavaScript" src="../../vexflow/build/vexflow/vexflow-min.js"></script>
+		<script type="text/JavaScript" src="../tables.js"></script>
+		<script type="text/JavaScript" src="../meitovexflow.js"></script>
+		<script type="text/JavaScript" src="loadxmldoc.js"></script>
+		<script type="text/JavaScript" src="runtest.js"></script>		
+		<script type="text/JavaScript">
+			var testItem_html = "<h2><span class='test-title' property='dc:title'>Title of Test Comes Here</span></h2><div class='a'><canvas width='1031' height='450' style='border: none'></canvas></div>"
+			Vex.LogLevel = 5;
+			$(document).ready(function(){
+				var test_cases = new Array();
+				
+				//add test cases
+				test_cases.push({ title: 'Prokofiev Op. 36', mei_xml: 'TC.Prokofiev.xml'});
+				test_cases.push({ title: 'Missing_Attribute_Test_Case', mei_xml: 'TC.MissingAttribute.xml'});
+				test_cases.push({ title: 'One-measure piece (Isaac-Rogamus te piissima virgo Maria)', mei_xml: 'TC.One-measure.xml'});
+				test_cases.push({ title: 'KeySpec.01 - default pitch and mode [C major]', mei_xml: 'TC.KeySpec.01.xml'});
+				test_cases.push({ title: 'KeySpec.02 - supplied pitch, default accid and mode [G major]', mei_xml: 'TC.KeySpec.02.xml'});
+				test_cases.push({ title: 'KeySpec.03 - supplied pitch and accid, default mode [G-flat major]', mei_xml: 'TC.KeySpec.03.xml'});
+				test_cases.push({ title: 'KeySpec.04 - supplied pitch, accid and mode [D-sharp minor]', mei_xml: 'TC.KeySpec.04.xml'});
+				test_cases.push({ title: "Directions.01 - 'pizz' above", mei_xml: 'TC.dir.01.xml'});
+				test_cases.push({ title: "Directions.02 - 'espressivo' below", mei_xml: 'TC.dir.02.xml'});
+				test_cases.push({ title: "Directions.03 - All execution paths", mei_xml: 'TC.dir.03.xml'});
+				test_cases.push({ title: "Clef - Treble", mei_xml: 'TC.VexClef.01.xml'});
+				test_cases.push({ title: "Clef - Treble with default clef.line", mei_xml: 'TC.VexClef.02.xml'});
+				test_cases.push({ title: "Clef - Bass", mei_xml: 'TC.VexClef.03.xml'});
+				test_cases.push({ title: "Clef - Bass with default clef.line", mei_xml: 'TC.VexClef.04.xml'});
+				test_cases.push({ title: "Clef - Tenor clef not supported", mei_xml: 'TC.VexClef.05.xml'});
+				var canvas_elements = new Array();
+				var title_elements = new Array();
+				//create as many canvases and title elements as test cases... 
+				$(test_cases).each( function(index) {
+					$('div.test-page').append(testItem_html);
+					
+					//...and load them into canvas_elements and title_elements arrays
+					canvas_elements[index] = $("div.a canvas")[index] 
+					title_elements[index] = $("span.test-title")[index];
+				})
+				
+				//render test cases
+				var i;
+				for (i=0;i<test_cases.length;i++) {
+					Vex.LogInfo('Starting Test Case #' + i.toString());
+					try {
+						MEI2VF.RunTest(test_cases[i], canvas_elements[i], title_elements[i]);
+					} catch(e) {
+						Vex.LogError('Error during rendering test case #' + i.toString() + " title: " + test_cases[i].title + ". Error Message: " +  e.toString());
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="test-page">
+		</div>
+	</body>
+</html>

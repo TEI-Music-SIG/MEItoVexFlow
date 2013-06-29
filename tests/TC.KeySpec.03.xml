@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<mei:scoreDef key.pname="c" key.mode="major">
+						<staffGrp>
+							<staffGrp barthru="false">
+								<staffDef n="1" label="Supremus" clef.line="2" clef.shape="G" meter.count="4" meter.unit="4" key.pname="g" key.accid='f'/>
+							</staffGrp>
+						</staffGrp>
+					</mei:scoreDef>
+					<section>
+						<mei:measure n="1">
+							<staff n="1">
+								<layer>
+								</layer>
+							</staff>
+						</mei:measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

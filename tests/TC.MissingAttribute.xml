@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<mei:scoreDef key.pname="c" key.mode="major">
+						<staffGrp>
+							<staffGrp barthru="false">
+								<staffDef n="1" label="Supremus" clef.line="2" clef.shape="G" meter.count="4" meter.unit="4"/>
+								<staffDef n="2" label="Altus" clef.line="2" clef.shape="G" clef.dis="8" clef.dis.place="below" meter.count="4" meter.unit="4"/>
+								<staffDef n="3" label="Tenor" clef.line="4" clef.shape="G" clef.dis="8" clef.dis.place="below" meter.count="4" meter.unit="4"/>
+								<staffDef n="4" label="Bassus" clef.line="4" clef.shape="F" meter.count="4" meter.unit="4"/>
+							</staffGrp>
+						</staffGrp>
+					</mei:scoreDef>
+					<section>
+						<mei:measure n="1">
+							<staff n="1">
+								<layer>
+									<note xml:id="tc01-v1e01" pname="a" oct="4" dur="1">
+										<syl wordpos="i">Ro</syl>
+									</note>
+									<note xml:id="tc01-v1e02" pname="e" dur="2">
+										<syl wordpos="m">ga</syl>
+									</note>
+									<note xml:id="tc01-v1e03" pname="a" oct="4" dur="2">
+										<syl wordpos="t">mus</syl>
+									</note>
+									<note xml:id="tc01-v1e04" pname="g" oct="4" dur="2">
+										<syl>te</syl>
+									</note>
+									<rest xml:id="tc01-v1e05" dur="4"></rest>
+									<note xml:id="tc01-v1e06" pname="a" oct="4" dur="4">
+										<syl wordpos="i">pi</syl>
+									</note>
+									<note xml:id="tc01-v1e07" pname="a" oct="4" dur="4">
+										<syl wordpos="m">is</syl>
+									</note>
+									<note xml:id="tc01-v1e08" pname="g" oct="4" dur="4">
+										<syl wordpos="m">si</syl>
+									</note>
+									<note xml:id="tc01-v1e09" pname="a" oct="4" dur="2">
+										<syl wordpos="t">ma</syl>
+									</note>
+									<note xml:id="tc01-v1e10" pname="e" oct="4" dur="4"></note>
+									<note xml:id="tc01-v1e11" pname="b" oct="4" dur="4"></note>
+									<note xml:id="tc01-v1e12" pname="c" oct="5" dur="2"></note>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<note xml:id="tc01-v2e01" pname="a" oct="3" dur="1">
+										<syl wordpos="i">Ro</syl>
+									</note>
+									<note xml:id="tc01-v2e02" pname="c" oct="4" dur="2">
+										<syl wordpos="m">ga</syl>
+									</note>
+									<note xml:id="tc01-v2e03" pname="d" oct="4" dur="2">
+										<syl wordpos="t">mus</syl>
+									</note>
+									<note xml:id="tc01-v2e04" pname="e" oct="4" dur="4" dots="1">
+										<syl>te</syl>
+									</note>
+									<note xml:id="tc01-v2e05" pname="d" oct="4" dur="8"></note>
+									<note xml:id="tc01-v2e06" pname="c" oct="4" dur="4">
+										<syl wordpos="i">pi</syl>
+									</note>
+									<note xml:id="tc01-v2e07" pname="b" oct="3" dur="8">
+										<syl wordpos="m">is</syl>
+									</note>
+									<note xml:id="tc01-v2e08" pname="a" oct="3" dur="8"></note>
+									<note xml:id="tc01-v2e09" pname="b" oct="3" dur="2">
+										<syl wordpos="m">si</syl>
+									</note>
+									<note xml:id="tc01-v2e10" pname="a" oct="3" dur="4">
+										<syl wordpos="t">ma</syl>
+									</note>
+									<note xml:id="tc01-v2e11" pname="e" oct="4" dur="2">
+										<syl wordpos="i">vir</syl>
+									</note>
+								</layer>
+							</staff>
+							<staff n="3">
+								<layer>
+									<rest xml:id="tc01-e03" dur="1"></rest>
+								</layer>
+							</staff>
+							<staff n="4">
+								<layer>
+									<rest xml:id="tc01-e04" dur="1"></rest>
+								</layer>
+							</staff>
+						</mei:measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

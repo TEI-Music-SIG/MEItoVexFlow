@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<scoreDef key.pname="c" key.mode="major">
+						<staffGrp>
+							<staffGrp barthru="false">
+								<staffDef n="1" label="Supremus" clef.line="2" clef.shape="G" meter.count="4" meter.unit="4"/>
+							</staffGrp>
+						</staffGrp>
+					</scoreDef>
+					<section>
+						<measure n="1">
+							<staff n="1">
+								<layer>
+									<note xml:id="v1e01" pname="c" oct="4" dur="4"/>
+									<note xml:id="v1e02" pname="c" oct="4" dur="4"/>
+									<note xml:id="v1e03" pname="c" oct="4" dur="4"/>
+									<note xml:id="v1e04" pname="c" oct="4" dur="4"/>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="2">
+							<staff n="1">
+								<layer>
+									<beam>
+										<note xml:id="v1e05" pname="f" oct="4" dur="8"/>
+										<note xml:id="v1e06" pname="f" oct="4" dur="8"/>
+									</beam>
+									<note xml:id="v1e07" pname="f" oct="4" dur="4"/>
+									<note xml:id="v1e08" pname="f" oct="4" dur="4"/>
+									<beam>
+										<note xml:id="v1e09" pname="f" oct="4" dur="8"/>
+										<note xml:id="v1e10" pname="b" oct="4" dur="8"/>
+									</beam>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="3">
+							<staff n="1">
+								<layer>
+									<mRest xml:id="v1e11"/>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="4">
+							<staff n="1">
+								<layer>
+									<beam>
+										<note xml:id="v1e12" pname="b" oct="4" dur="8"/>
+										<note xml:id="v1e13" pname="b" oct="4" dur="16"/>
+										<note xml:id="v1e14" pname="b" oct="4" dur="16"/>
+									</beam>
+									<beam>
+										<note xml:id="v1e15" pname="b" oct="4" dur="16"/>
+										<note xml:id="v1e16" pname="c" oct="4" dur="32"/>
+										<note xml:id="v1e17" pname="c" oct="4" dur="32"/>
+										<note xml:id="v1e18" pname="b" oct="4" dur="16"/>
+										<note xml:id="v1e19" pname="c" oct="4" dur="16"/>
+									</beam>
+									<rest xml:id="v1e20" dur="8"/>
+									<chord xml:id="v1e:ch21-23">
+										<note xml:id="v1e21" pname="a" oct="3" dur="8"/>
+										<note xml:id="v1e22" pname="f" oct="4" dur="8"/>
+										<note xml:id="v1e23" pname="c" oct="5" dur="8"/>
+									</chord>
+									<note xml:id="v1e24" pname="c" oct="4" dur="4"/>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="5">
+							<staff n="1">
+								<layer>
+									<rest xml:id="v1e25" dur="8"/>
+									<chord xml:id="v1e:ch26-28" dur="8">
+										<note xml:id="v1e26" pname="g" oct="3"/>
+										<note xml:id="v1e27" pname="f" oct="4"/>
+										<note xml:id="v1e28" pname="b" oct="4"/>
+									</chord>
+									<note xml:id="v1e32" pname="c" oct="5" dur="4"/>
+									<space xml:id="v1e33" dur="4"/>
+									<chord xml:id="v1e:ch29-31">
+										<note xml:id="v1e29" pname="g" oct="3" dur="4" layer="2"/>
+										<note xml:id="v1e30" pname="e" oct="4" dur="8"/>
+										<note xml:id="v1e31" pname="c" oct="5" dur="8"/>
+									</chord>
+								</layer>
+							</staff>
+						</measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

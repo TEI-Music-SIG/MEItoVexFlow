@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html
+version="HTML+RDFa 1.0" xml:lang="en">
+	<head>
+		<title>MEI-to-VexFlow UNIT TESTS</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/JavaScript" src="../../vexflow/build/vexflow/vexflow-min.js"></script>
+		<script type="text/JavaScript" src="../tables.js"></script>
+		<script type="text/JavaScript" src="../meitovexflow.js"></script>
+		<script type="text/JavaScript" src="../EventReference.js"></script>		
+		<script type="text/JavaScript" src="../EventLink.js"></script>		
+		<script type="text/JavaScript">
+		
+		var dict;
+		
+		var note1 = { localName: 'note', attrs: { id:'n01', pname:'a' } };
+		var note2 = { localName: 'note', attrs: { id:'n02', pname:'b' } };
+		var note3 = { localName: 'note', attrs: { id:'n03', pname:'c' } };
+		var note4 = { localName: 'note', attrs: { id:'n04', pname:'d' } };
+		var notes = [];
+
+		console.log('\n\n************ Unit test: EventReference *********');
+		console.log('\n>>>>>Constructor - default');
+		var ref0 = new MEI2VF.EventReference();
+		try {
+			console.log(ref0.getId()); 			
+		} catch (e) {
+			console.log(e.toString());//undefined reference
+		}
+		console.log('\n>>>>>Constructor - set');
+		var ref1 = new MEI2VF.EventReference('n01');
+		console.log(ref1.getId()); //n01
+
+		console.log('\n>>>>>setId');
+		var ref2 = new MEI2VF.EventReference();
+		ref2.setId('n01');
+		console.log(ref2.getId()); //n01
+
+		console.log('\n>>>>>setTStamp() and tryResolveReference() - all undefined');
+		var ref3 = new MEI2VF.EventReference();
+		ref3.setTStamp();
+		console.log('OK'); //OK
+		console.log('>>>>>setTStamp() and tryResolveReference() - undefined xmlid');
+		var ref3 = new MEI2VF.EventReference();
+		ref3.setTStamp('1.5');
+		console.log('OK'); //OK
+		console.log('>>>>>setTStamp() and tryResolveReference() - undefined tstamp');
+		var ref4 = new MEI2VF.EventReference('n01');
+		try {
+			ref4.setTStamp();			
+		} catch (e) {
+			console.log(e.toString()); //'MEI2VF.EventReference: tstamp must be set in order to resolve reference.'
+		}
+		console.log('>>>>>setTStamp() and tryResolveReference() - all defined, but context');
+		var ref5 = new MEI2VF.EventReference('n01');
+		try {
+			ref5.setTStamp('2.5');
+			console.log(ref5.getId()); //undefined
+		} catch (e) {
+			console.log(e.toString()); //'MEI2VF.EventReference: resolution of tstamp is not supported'
+		}
+				
+				
+
+		console.log('\n\n************ Unit test: EventLink *********');
+		console.log('\n>>>>>Constructor: default');
+		var link1 = new MEI2VF.EventLink();
+		try {
+			console.log(link1.getFirstId()); //null
+			console.log(link1.getFirstId()); //null
+		} catch (e) {
+			console.log(e.toString())
+		}
+
+		console.log('>>>>>Constructor: set first');
+		var link2 = new MEI2VF.EventLink('n01');
+		try {
+			console.log(link2.getFirstId()); //n01
+			console.log(link2.getLastId());
+		} catch (e) {
+			console.log(e.toString()) //'MEI2VF.EventReference: undefined reference'
+		}
+
+		console.log('>>>>>Constructor: set both');
+		var link3 = new MEI2VF.EventLink('n01', 'n02');
+		console.log(link3.getFirstId()); // n01
+		console.log(link3.getLastId()); // n02
+
+		console.log('\n>>>>>Setting Refs:');
+		var link4 = new MEI2VF.EventLink('n01', 'n02');
+		var ref6 = new MEI2VF.EventReference('n03');
+		var ref7 = new MEI2VF.EventReference('n04');
+		link4.setFirstRef(ref6);
+		link4.setLastRef(ref7);
+		console.log(link4.getFirstId()); //n03
+		console.log(link4.getLastId()); //n04
+
+		console.log('\n>>>>>Setting Ids:');
+		var link5 = new MEI2VF.EventLink();
+		link5.setFirstId('n03');
+		link5.setLastId('n04');
+		console.log(link5.getFirstId()); //n03
+		console.log(link5.getLastId()); //n04
+		
+		console.log('\n>>>>>Setting TStamps:');
+		var link6 = new MEI2VF.EventLink();
+		link6.setFirstTStamp('1.5');
+		link6.setLastTStamp('1m+1');
+		try {
+			console.log(link6.getFirstId()); 
+			console.log(link6.getLastId());
+		} catch(e) {
+			console.log(e.toString()); //'MEI2VF.EventReference: resolution of tstamp is not supported'
+		}
+
+		console.log('\n>>>>>Mixed reference:');
+		var link7 = new MEI2VF.EventLink();
+		link7.setFirstId('n01');
+		link7.setLastTStamp('1m+1');
+		try {
+			console.log(link7.getFirstId());  //n01
+			console.log(link7.getLastId());
+		} catch(e) {
+			console.log(e.toString()); //'MEI2VF.EventReference: resolution of tstamp is not supported'
+		}
+		// 
+		// notes.push(note1);
+		// notes.push(note2);
+		// notes.push(note3);
+		// notes.push(note4);
+		// 
+		// var dict = {};
+		// dict["n01"] = note1;
+		// dict["n02"] = note2;
+		// dict["n03"] = note3;
+		// dict["n04"] = note4;
+		// 
+
+		
+		
+				
+
+		// var link1 = new EventLink('n01', 'n02');
+		// var link2 = new EventLink('n02');
+		// link2.setTStamp2('1m+2');
+		// 
+		// var link3 = new EventLink();
+		// link3.setFirstNoteId('n03');
+		// 
+		// // var connection1 = { first_id:'n01', last_id:'n02' };
+		// // var connection2 = { first_id:'n02' };
+		// // var connection3 = { first_id:'n03' };
+		// 
+		// var ties = [];
+		// ties.push(link1);
+		// ties.push(link2);
+		// ties.push(link3);
+		// 
+		// $.each(ties, function(i, link) {
+		// 	try {
+		// 		console.log( 'tie #' + i);
+		// 		console.log( "first_note pitch:" + dict[link.getFirstNoteId()].attrs.pname );
+		// 		console.log( "last_note_id:" + link.getLastNoteId() );
+		// 	} catch (e) {
+		// 		console.log(e);
+		// 	}
+		// });
+		// 
+		// console.log('Assigning last_id')
+		// ties[2].setLastNoteId('n04');
+		// 
+		// $.each(ties, function(i, link) {
+		// 	try{
+		// 		console.log( 'tie #' + i);
+		// 		console.log( "first_note_id:" + link.getFirstNoteId() );
+		// 		console.log( "last_note_id:" + link.getLastNoteId() );
+		// 	} catch (e) {
+		// 		console.log(e.toString());
+		// 	}
+		// });
+		
+		
+		</script>
+	</head>
+	<body>
+		MEI2VexFlow Unit Tests. See console.log messages!
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<scoreDef key.pname="c" key.mode="major">
+						<staffGrp>
+							<staffGrp barthru="false">
+								<staffDef n="1" label="Supremus" clef.line="2" clef.shape="G" meter.count="4" meter.unit="2"/>
+							</staffGrp>
+						</staffGrp>
+					</scoreDef>
+					<section>
+						<measure n="1">
+							<staff n="1">
+								<layer>
+									<note xml:id="v1e01" pname="c" oct="4" dur="4"/>
+									<note xml:id="v1e02" pname="c" oct="4" dur="2"/>
+									<note xml:id="v1e03" pname="c" oct="4" dur="2"/>
+									<note xml:id="v1e04" pname="c" oct="4" dur="2"/>
+									<note xml:id="v1e05" pname="f" oct="4" dur="4"/>
+								</layer>
+							</staff>
+							<tie staff="1" tstamp="1" endid="v1e02"/>
+							<tie staff="1" tstamp="2.5" tstamp2="0m+3.5"/>
+							<tie staff="1" tstamp="4.5" tstamp2="1m+1"/>
+						</measure>
+						<measure n="2">
+							<staff n="1">
+								<layer>
+									<note xml:id="v1e06" pname="f" oct="4" dur="4"/>
+									<note xml:id="v1e07" pname="f" oct="4" dur="2"/>
+									<note xml:id="v1e08" pname="f" oct="4" dur="2"/>
+									<note xml:id="v1e09" pname="f" oct="4" dur="2"/>
+									<note xml:id="v1e10" pname="b" oct="4" dur="4"/>
+								</layer>
+							</staff>
+							<tie staff="1" tstamp="1" tstamp2="0m+1.5"/>
+							<tie staff="1" tstamp="1.5" tstamp2="2.5"/>
+							<tie staff="1" tstamp="2.5" tstamp2="3.5"/>
+							<tie staff="1" tstamp="4.5" tstamp2="1m+1"/>
+						</measure>
+						<measure n="3">
+							<staff n="1">
+								<layer>
+									<note xml:id="v1e11" pname="b" oct="4" dur="4"/>
+									<note xml:id="v1e12" pname="b" oct="4" dur="2"/>
+									<note xml:id="v1e13" pname="b" oct="4" dur="2"/>
+									<note xml:id="v1e14" pname="b" oct="4" dur="2"/>
+									<note xml:id="v1e15" pname="c" oct="5" dur="4"/>
+								</layer>
+							</staff>
+							<tie staff="1" startid="v1e11" endid="v1e12" bulge="-1"/>
+							<tie staff="1" startid="v1e12" endid="v1e13" bulge="-1"/>
+							<tie staff="1" startid="v1e13" endid="v1e14" bulge="-1"/>
+							<tie staff="1" startid="v1e15" bulge="-1"/>
+						</measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<scoreDef key.pname="c" key.mode="major">
+						<staffGrp>
+							<staffGrp barthru="false">
+								<staffDef n="1" clef.line="2" clef.shape="G" meter.count="4" meter.unit="4"/>
+							</staffGrp>
+						</staffGrp>
+					</scoreDef>
+					<section>
+						<measure n="1">
+							<staff n="1">
+								<layer>
+									<beam>
+										<note xml:id="v1e01" pname="a" oct="4" dur="8" slur="i1 i2"/>
+										<note xml:id="v1e02" pname="c" oct="4" dur="8" slur="m1 m2"/>
+										<note xml:id="v1e03" pname="e" oct="4" dur="8" slur="m1 m2"/>
+										<note xml:id="v1e04" pname="a" oct="4" dur="8" slur="t1 m2"/>
+									</beam>
+									<note xml:id="v1e05" pname="g" oct="4" dur="4" slur="i1 m2"/>
+									<note xml:id="v1e06" pname="f" oct="4" dur="4" slur="t1 t2"/>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="2">
+							<staff n="1">
+								<layer>
+									<beam>
+										<note xml:id="v1e07" pname="e" oct="4" dur="8"/>
+										<note xml:id="v1e08" pname="a" oct="3" dur="8"/>
+										<note xml:id="v1e09" pname="c" oct="4" dur="8"/>
+										<note xml:id="v1e10" pname="f" oct="4" dur="8"/>
+									</beam>
+									<note xml:id="v1e11" pname="e" oct="4" dur="4"/>
+									<note xml:id="v1e12" pname="d" oct="4" dur="4"/>
+								</layer>
+							</staff>
+							<slur staff="1" startid="v1e07" endid="v1e10"/>
+							<slur staff="1" startid="v1e11" endid="v1e12"/>
+							<slur staff="1" startid="v1e07" endid="v1e12"/>
+						</measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

@@ -15,7 +15,11 @@ version="HTML+RDFa 1.0" xml:lang="en">
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script type="text/JavaScript" src="../../vexflow/build/vexflow/vexflow-min.js"></script>
 		<script type="text/JavaScript" src="../tables.js"></script>
+		<script type="text/JavaScript" src="../meilib.js"></script>
 		<script type="text/JavaScript" src="../meitovexflow.js"></script>
+		<script type="text/JavaScript" src="../EventLink.js"></script>
+		<script type="text/JavaScript" src="../EventReference.js"></script>
+		<script type="text/JavaScript" src="../StaffInfo.js"></script>
 		<script type="text/JavaScript" src="loadxmldoc.js"></script>
 		<script type="text/JavaScript" src="runtest.js"></script>		
 		<script type="text/JavaScript">
@@ -27,7 +31,6 @@ version="HTML+RDFa 1.0" xml:lang="en">
 				//add test cases
 				test_cases.push({ title: 'Prokofiev Op. 36', mei_xml: 'TC.Prokofiev.xml'});
 				test_cases.push({ title: 'Prokofiev Op. 36 (with prefixes)', mei_xml: 'TC.Prokofiev.pref.xml'});
-				test_cases.push({ title: 'Missing_Attribute_Test_Case', mei_xml: 'TC.MissingAttribute.xml'});
 				test_cases.push({ title: 'One-measure piece (Isaac-Rogamus te piissima virgo Maria)', mei_xml: 'TC.One-measure.xml'});
 				test_cases.push({ title: 'KeySpec.01 - default pitch and mode [C major]', mei_xml: 'TC.KeySpec.01.xml'});
 				test_cases.push({ title: 'KeySpec.02 - supplied pitch, default accid and mode [G major]', mei_xml: 'TC.KeySpec.02.xml'});
@@ -40,7 +43,17 @@ version="HTML+RDFa 1.0" xml:lang="en">
 				test_cases.push({ title: "Clef - Treble with default clef.line", mei_xml: 'TC.VexClef.02.xml'});
 				test_cases.push({ title: "Clef - Bass", mei_xml: 'TC.VexClef.03.xml'});
 				test_cases.push({ title: "Clef - Bass with default clef.line", mei_xml: 'TC.VexClef.04.xml'});
-				test_cases.push({ title: "Clef - Tenor clef not supported", mei_xml: 'TC.VexClef.05.xml'});
+				test_cases.push({ title: "Ties", mei_xml: 'TC.Ties.xml'});
+				test_cases.push({ title: "Ties with @tstamp", mei_xml: 'TC.Ties.TStamps.xml'});
+				test_cases.push({ title: "Slurs", mei_xml: 'TC.Slurs.xml'});
+				test_cases.push({ title: "Slurs with @tstamp", mei_xml: 'TC.Slurs.TStamps.xml'});
+				test_cases.push({ title: "Hairpins (startid/endid tstamp/tstamp2)", mei_xml: 'TC.Hairpins.xml'});
+				
+				
+				//Test cases that are supposed to generate error messages on the console:
+				//  test_cases.push({ title: 'Missing_Attribute_Test_Case', mei_xml: 'TC.MissingAttribute.xml'});
+				//  test_cases.push({ title: "Clef - Tenor clef not supported", mei_xml: 'TC.VexClef.05.xml'});
+
 				var canvas_elements = new Array();
 				var title_elements = new Array();
 				//create as many canvases and title elements as test cases... 

@@ -12,7 +12,7 @@ mei2vexflowTables.positions = {
 
 mei2vexflowTables.hairpins = {
   'cres' : Vex.Flow.StaveHairpin.type.CRESC,
-  'dim' : Vex.Flow.StaveHairpin.DESCRESC
+  'dim' : Vex.Flow.StaveHairpin.type.DECRESC
 }
 
 mei2vexflowTables.articulations = {

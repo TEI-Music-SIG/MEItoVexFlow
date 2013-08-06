@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<scoreDef>
+						<staffGrp symbol="brace">
+							<staffDef n="1" clef.line="4" clef.shape="F" meter.count="9" meter.unit="8" key.pname="f"/>
+							<staffDef n="2" clef.line="4" clef.shape="F" meter.count="9" meter.unit="8" key.pname="f"/>
+						</staffGrp>
+					</scoreDef>
+					<section>
+						<measure n="1">
+							<staff n="1">
+								<layer>
+									<rest dur="8"/>
+									<beam>
+										<note xml:id="HrpRM01N01" pname="g" oct="2" dur="8" slur="i1">
+											<artic artic="dot"/>
+										</note>
+										<note xml:id="HrpRM01N02" pname="a" oct="2" dur="8">
+											<artic artic="dot"/>
+										</note>
+									</beam>
+									<note pname="c" oct="3" dur="4" dots="1" slur="t1"/>
+									<note pname="c" oct="3" dur="4" dots="1"/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<beam>
+										<note pname="f" oct="2" dur="8"/>
+										<note pname="e" oct="2" dur="8"/>
+										<note pname="d" oct="2" dur="8"/>
+									</beam>
+									<beam>
+										<note pname="c" oct="2" dur="8"/>
+										<note pname="g" oct="2" dur="8"/>
+										<note pname="c" oct="2" dur="8" tie="i"/>
+									</beam>
+									<beam>
+										<note pname="c" oct="2" dur="8" tie="t"/>
+										<note pname="g" oct="2" dur="8"/>
+										<note pname="c" oct="2" dur="8"/>
+									</beam>
+								</layer>
+							</staff>
+							<hairpin tstamp="4" tstamp2="10" staff="1" place="below" form="dim"/>
+						</measure>
+						<scoreDef>
+							<staffGrp symbol="brace">
+								<staffDef n="1" clef.line="2" clef.shape="G" meter.count="18" meter.unit="16" key.pname="d" key.accid="f"/>
+								<staffDef n="2" clef.line="4" clef.shape="F" meter.count="18" meter.unit="16" key.pname="d" key.accid="f"/>
+							</staffGrp>
+						</scoreDef>
+						<measure n="2">
+							<staff n="1">
+								<layer>
+									<rest dur="4" dots="1"/>
+									<rest dur="4" dots="1"/>
+									<note pname="d" accid="n" oct="4" dur="4" dots="1"/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<rest dur="4" dots="1"/>
+									<rest dur="4" dots="1"/>
+									<note pname="c" accid="n" oct="3" dur="4" dots="1"/>
+								</layer>
+							</staff>
+						</measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

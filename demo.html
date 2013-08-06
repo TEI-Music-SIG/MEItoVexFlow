@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>MEItoVexFlow Demo</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<!--    <script src="http://vexflow.com/vextab/support/vexflow-min.js"></script> -->
+    <script type="text/JavaScript" src="javascripts/vexflow-min.js"></script>
+    <script type="text/JavaScript" src="javascripts/meitovexflow-min.js"></script>  
+    <script type="text/JavaScript" src="javascripts/support.js"></script>
+    <script type="text/JavaScript">
+    var testItem_html = "<div class='demoitem'><h1><span class='test-title' property='dc:title'>Title Comes Here</span></h1><div class='desc'><p>Description</p></div><div class='test-canvas'><canvas width='1031' height='450' style='border: none'></canvas></div><p><h3>The input MEI score:</h3></p><pre><code></code></pre></div><div style='height:150px;'></div> "
+    Vex.LogLevel = 5;
+    $(document).ready(function(){
+      var test_cases = new Array();
+      
+      // add examples
+      var descBartok = "A complex example that showcases a combination of the latest developments: <ul><li>System breaks</li><li>Changing time signature/meter/key are supported</li><li>Stave connectors lines on the left of each system</li></ul>";
+      var descSystemBreak = "System breaks are encoded in MEI with the &lt;sb/&gt; element. Wherever Mei-to-VexFlow encounters a &lt;sb/&gt; element, it creates a new system.";
+      var descStaveConnectors = "Staff connectors are the lines and symbols connecting the staves within a system. Different staff connectors are supported in order to render different symbols connecting different groups of staves. For example, a brace for the piano right left hand, or a bracket for a group of instruments in an orchestral score.";
+      var descStaffChange = "It’s possible to display changing time signature, meter or clef. For instance, in the harp part of the Sonata for Flute Viola and Harp by Debussy all three occur at once:";
+      // var descHairpins = "In case of line objects (such as slurs or hairpins) MEI provides two ways of describing where a line begins and where it ends. The most straightforward way is to specify that the line, for instance, ‘<i>starts at note one in measure two and ends at note two in measure two</i>’.On the other hand there are instances when the line doesn’t exactly correspond to the start of notes. For these cases MEI allows the encoder to specify two points in time expressed as beats. For example the diminuendo in the second bar of the Ravel example start roughly on the third beat, hence one can describe it as a ‘<i>diminuendo starting in the third beat and ending at beat “five” - that is at the very end of the measure</i>’. Or indeed, in the fourth measure the crescendo ‘<i>starts at beat 1 and ends at beat 3.5</i>’. </p><p> We’ve made MEI-to-VexFlow capable of dealing with such encodings. Although it is a simplified solution at the moment, that is finding the closest notes and drawing the lines as they were attached to notes, this is a very important step towards more advanced support for these objects. In the future it will be possible to render the lines between the correct locations by calculating offsets from the closest notes.";
+      
+      test_cases.push({ title: 'Bartok Duo No.23', mei_xml: 'samples/Bartok-WeddingSong-altered.xml', canvas_height:460, desc:descBartok });
+      // test_cases.push({ title: "Hairpins encoded with xml:id and @tstamp", mei_xml: 'samples/Demo.Hairpins.Ravel.M2.xml', canvas_width:600, canvas_height:250, desc:descHairpins });
+      test_cases.push({ title: 'Staff Connectors Symbols', mei_xml: 'samples/Demo.StaveConnectors.xml', canvas_width:600, canvas_height:500, desc:descStaveConnectors });
+      test_cases.push({ title: "System Break", mei_xml: 'samples/Demo.BachCPrelude.xml', canvas_width:1500, canvas_height:450, desc:descSystemBreak });
+      test_cases.push({ title: "Changing time signature, meter and clef", mei_xml: 'samples/Demo.StaffDefChanges.xml', canvas_width:800, canvas_height:220, desc:descStaffChange });
+      var canvas_elements = new Array();
+      var title_elements = new Array();
+      var code_elements = new Array();
+      var desc_elements = new Array();
+      //create as many canvases and title elements as many examples... 
+      $(test_cases).each( function(index) {
+        $('div.MEI2VFexample').append(testItem_html);
+        //...and load them into canvas_elements and title_elements arrays
+        canvas_elements[index] = $("div.test-canvas canvas")[index]
+        title_elements[index] = $("span.test-title")[index];
+        code_elements[index] = $("code")[index];
+        desc_elements[index] = $("div.desc p")[index];
+      })
+
+      //render examples
+      var i;
+      for (i=0;i<test_cases.length;i++) {
+        Vex.LogInfo('Starting rendering example #' + i.toString());
+        try {
+          MEI2VF.RunTest(test_cases[i], canvas_elements[i], title_elements[i], code_elements[i], desc_elements[i]);
+        } catch(e) {
+          Vex.LogError('Error during rendering example #' + i.toString() + " title: " + test_cases[i].title + ". Error Message: " +  e.toString());
+        }
+      }
+    });
+    </script>
+    <style>
+    pre {
+      width: 75%;
+      height: 300px;
+      margin:0 auto;
+    }
+    .view{
+      line-height: 1.8em;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="demo">
+        <div class="MEI2VFexample">
+        </div>
+      </section>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-42659037-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+
+  </body>
+</html>

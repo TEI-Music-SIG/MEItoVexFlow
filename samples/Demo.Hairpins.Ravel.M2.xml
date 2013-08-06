@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<scoreDef>
+						<staffGrp>
+							<staffGrp barthru="false">
+								<staffDef n="1" clef.line="2" clef.shape="G" meter.count="4" meter.unit="4"  key.pname="g" key.accid="f" key.mode="major"/>
+								<staffDef n="2" clef.line="2" clef.shape="G" meter.count="4" meter.unit="4"  key.pname="a" key.mode="major"/>
+							</staffGrp>
+						</staffGrp>
+					</scoreDef>
+					<section>
+						<measure n="1">
+							<staff n="1">
+								<layer>
+									<note xml:id="FltM01N01" pname="a" oct="4" dur="4"/>
+									<note xml:id="FltM01N02" pname="e" oct="5" dur="2" tie="i"/>
+									<beam>
+										<note pname="e" oct="5" dur="8" tie="t"/>
+										<note pname="a" oct="4" dur="8" tie="i" stem.dir="down"/>
+									</beam>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<note xml:id="CltM01N01" pname="g" accid="n" oct="4" dur="4"/>
+									<note xml:id="CltM01N02" pname="d" accid="n" oct="5" dur="2" tie="i"/>
+									<beam>
+										<note pname="d" oct="5" dur="8" tie="t"/>
+										<note pname="g" oct="4" dur="8" tie="i" stem.dir="down"/>
+									</beam>
+								</layer>
+							</staff>
+							<hairpin startid="FltM01N01" endid="FltM01N02" staff="1" place="below" form="cres" />
+							<hairpin startid="CltM01N01" endid="CltM01N02" staff="2" place="below" form="cres" />
+							<hairpin tstamp="3" tstamp2="5" staff="1" place="below" form="dim"/>
+							<hairpin tstamp="3" tstamp2="5" staff="2" place="below" form="dim"/>
+						</measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

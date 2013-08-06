@@ -1,142 +1,153 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>MEItoVexFlow by TEI-Music-SIG</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>MEItoVexFlow by TEI-Music-SIG</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://vexflow.com/vextab/support/vexflow-min.js"></script>
-    <script type="text/JavaScript" src="javascripts/meitovexflow.js"></script>  
-    <style>
-      pre {
-        width: 500px;
-        height: 300px;
-      }
-      .view{
-        line-height: 1.8em;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>MEItoVexFlow</h1>
-        <p>JavaScript libray to render MEI notation using VexFlow</p>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="http://vexflow.com/vextab/support/vexflow-min.js"></script>
+  <script type="text/JavaScript" src="javascripts/meitovexflow-min.js"></script>  
+  <style>
+  pre {
+    width: 500px;
+    height: 300px;
+  }
+  .view{
+    line-height: 1.8em;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>MEItoVexFlow</h1>
+      <p>JavaScript libray to render MEI notation using VexFlow</p>
 
-        <p class="view"><a href="https://github.com/TEI-Music-SIG/MEItoVexFlow">View the Project on GitHub<br/><small>TEI-Music-SIG/MEItoVexFlow</small></a></p>
+      <p class="view"><a href="https://github.com/TEI-Music-SIG/MEItoVexFlow">View the Project on GitHub<br/><small>TEI-Music-SIG/MEItoVexFlow</small></a></p>
 
+      <ul>
+        <li><a href="https://github.com/TEI-Music-SIG/MEItoVexFlow/zipball/master">Download <strong>ZIP File</strong></a></li>
+        <li><a href="https://github.com/TEI-Music-SIG/MEItoVexFlow/tarball/master">Download <strong>TAR Ball</strong></a></li>
+        <li><a href="https://github.com/TEI-Music-SIG/MEItoVexFlow">View On <strong>GitHub</strong></a></li>
+      </ul>
+    </header>
+    <section>
+      <h3><a name="what-is-mei-to-vexflow" class="anchor" href="#what-is-mei-to-vexflow"><span class="octicon octicon-link"></span></a>What is MEI to VexFlow?</h3>
+
+      <p>MEI to VexFlow is a JavaScript library to render MEI encoded-music notation using VexFlow.</p>
+
+      <p><a href="http://music-encoding.org">MEI</a> is a community-developed format for music notation targeted at the academic community for research, teaching, and preservation.</p>
+
+      <p><a href="http://vexflow.com">VexFlow</a> is an open-source online music notation rendering API. It is written completely in JavaScript and supports HTML5 Canvas and SVG.</p>
+
+      <p>Here's an example of MEI encoding (snippet) and its rendition via MEI to VexFlow:</p>
+
+      <div id="MEI2VFexample">
+        <canvas width="500" style='border: none'></canvas>
+      </div>
+      <script>
+      var src = '<?xml version="1.0" encoding="UTF-8"?> <mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:xlink="http://www.w3.org/1999/xlink" meiversion="2013"> <meiHead> <fileDesc> <titleStmt> <title>Auf dem Hügel sitz ich spähend</title> <respStmt> <persName role="composer">Ludwig van Beethoven</persName> </respStmt> </titleStmt> <pubStmt/> </fileDesc> </meiHead> <music> <body> <mdiv> <score> <scoreDef key.sig="3f" key.mode="major"> <staffGrp> <staffDef n="1" xml:id="P1" label="Voice" lines="5" meter.count="3" meter.unit="4" clef.line="2" clef.shape="G" key.sig="3f" key.mode="major"/> </staffGrp> </scoreDef> <section> <measure n="1" xml:id="d1e136"> <staff n="1"> <layer n="1"> <rest xml:id="d1e176" dur="4"/> <note xml:id="d1e184" pname="b" oct="4" dur="4" > <verse> <syl>Auf</syl> </verse> </note> <note xml:id="d1e205" pname="b" oct="4" dur="4" > <verse> <syl>dem</syl> </verse> </note> </layer> </staff> <dir startid="#d1e176" tstamp="1" place="above" staff="1"> Ziemlich langsam und mit Ausdruck </dir> </measure> <measure n="2" xml:id="d1e475"> <staff n="1"> <layer n="1"> <note xml:id="d1e477" pname="b" oct="4" dur="4" dots="1" > <verse> <syl wordpos="i">Hü</syl> </verse> </note> <note xml:id="d1e499" pname="c" oct="5" dur="8"> <verse> <syl wordpos="t">gel</syl> </verse> </note> <beam> <note xml:id="d1e518" pname="d" oct="5" dur="8"> <verse> <syl>sitz</syl> </verse> </note> <note xml:id="d1e539" pname="e" oct="5" dur="8" > <verse> <syl>ich</syl> </verse> </note> </beam> </layer> </staff> </measure> </section> </score> </mdiv> </body> </music> </mei>';
+      parser=new DOMParser();
+      xmlDoc=parser.parseFromString(src,"text/xml");
+      var MEI = xmlDoc.getElementsByTagNameNS("http://www.music-encoding.org/ns/mei", 'score');
+      MEI2VF.render_notation(MEI, $("#MEI2VFexample canvas").get(0), 450, 200);
+      </script>
+
+      <pre><code>&lt;section&gt;
+        &lt;measure n="1" xml:id="d1e136"&gt;
+        &lt;staff n="1"&gt;
+        &lt;layer n="1"&gt;
+        &lt;rest xml:id="d1e176" dur="4"/&gt;
+        &lt;note xml:id="d1e184" pname="b" oct="4" dur="4"&gt;
+        &lt;verse&gt;
+        &lt;syl&gt;Auf&lt;/syl&gt;
+        &lt;/verse&gt;
+        &lt;/note&gt;
+        &lt;note xml:id="d1e205" pname="b" oct="4" dur="4"&gt;
+        &lt;verse&gt;
+        &lt;syl&gt;dem&lt;/syl&gt;
+        &lt;/verse&gt;
+        &lt;/note&gt;
+        &lt;/layer&gt;
+        &lt;/staff&gt;
+        &lt;/measure&gt;
+        &lt;measure n="2" xml:id="d1e475"&gt;
+        &lt;staff n="1"&gt;
+        &lt;layer n="1"&gt;
+        &lt;note pname="b" oct="4" dur="4" dots="1"&gt;
+        &lt;verse&gt;
+        &lt;syl wordpos="i"&gt;Hü&lt;/syl&gt;
+        &lt;/verse&gt;
+        &lt;/note&gt;
+        &lt;note xml:id="d1e499" pname="c" oct="5" dur="8"&gt;
+        &lt;verse&gt;
+        &lt;syl wordpos="t"&gt;gel&lt;/syl&gt;
+        &lt;/verse&gt;
+        &lt;/note&gt;
+        &lt;beam&gt;
+        &lt;note xml:id="d1e518" pname="d" oct="5" dur="8"&gt;
+        &lt;verse&gt;
+        &lt;syl&gt;sitz&lt;/syl&gt;
+        &lt;/verse&gt;
+        &lt;/note&gt;
+        &lt;note xml:id="d1e539" pname="e" oct="5" dur="8"&gt;
+        &lt;verse&gt;
+        &lt;syl&gt;ich&lt;/syl&gt;
+        &lt;/verse&gt;
+        &lt;/note&gt;
+        &lt;/beam&gt;
+        &lt;/layer&gt;
+        &lt;/staff&gt;
+        &lt;/measure&gt;
+        &lt;/section&gt;
+      </code></pre>
+
+      <h3><a name="projects-history" class="anchor" href="#projects-history"><span class="octicon octicon-link"></span></a>Project's history</h3>
+
+      <p>This library was first created by <a href="https://github.com/ironchicken/MEItoVexFlow">Richard Lewis</a>, then expanded as part of the <a href="http://duchemin.haverford.edu/">Digital Du Chemin</a> project. Right now MEItoVexFlow is being improved on by <a href="https://github.com/zolaemil">Zoltán Kőmíves</a> thanks to sponsorship from Google Summer of Code awarded to the <a href="http://mith.umd.edu">Maryland Institute for Technology in the Humanities</a> (MITH).</p>
+
+      <h3><a name="why-mei" class="anchor" href="#why-mei"><span class="octicon octicon-link"></span></a>Why MEI?</h3>
+
+      <p>The <a href="http://music-encoding.org">Music Encoding Initative</a> (MEI) maintains an XML-based format for representing music notation. This format stands out for its ability to model ambiguity in textual transcription, which is useful for encoding and digitally preserve manuscript notated music. MEI can also represent textual variants, which are crucial to critical editing and relevant to both musicological and performing musicians communities.</p>
+
+      <h3><a name="where-are-we" class="anchor" href="#where-are-we"><span class="octicon octicon-link"></span></a>Where are we?</h3>
+
+      <p>Visit our <a href="demo.html">demo page</a> to see what the library is capable of.</p>
+
+      <p><h4>Recent developments in MEI-to-VexFlow are</h4>
         <ul>
-          <li><a href="https://github.com/TEI-Music-SIG/MEItoVexFlow/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/TEI-Music-SIG/MEItoVexFlow/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/TEI-Music-SIG/MEItoVexFlow">View On <strong>GitHub</strong></a></li>
+          <li>Ties and slurs can be encoded with attributes</li>
+          <li>@tstamp and @tstamp2 attributes supported in tie, slur and hairpin elements</li>
+          <li>System breaks</li>
+          <li>Changing time signature/meter/key are supported</li>
+          <li>Stave connectors lines on the left of each system</li>
+          <li>Bug fixes</li>
         </ul>
-      </header>
-      <section>
-        <h3>
-<a name="what-is-mei-to-vexflow" class="anchor" href="#what-is-mei-to-vexflow"><span class="octicon octicon-link"></span></a>What is MEI to VexFlow?</h3>
-
-<p>MEI to VexFlow is a JavaScript library to render MEI encoded-music notation using VexFlow.</p>
-
-<p><a href="http://music-encoding.org">MEI</a> is a community-developed format for music notation targeted at the academic community for research, teaching, and preservation.</p>
-
-<p><a href="http://vexflow.com">VexFlow</a> is an open-source online music notation rendering API. It is written completely in JavaScript and supports HTML5 Canvas and SVG.</p>
-
-<p>Here's an example of MEI encoding (snippet) and its rendition via MEI to VexFlow:</p>
-
-<div id="MEI2VFexample">
-  <canvas width="500" style='border: none'></canvas>
-</div>
-<script>
-  var src = '<?xml version="1.0" encoding="UTF-8"?> <mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:xlink="http://www.w3.org/1999/xlink" meiversion="2013"> <meiHead> <fileDesc> <titleStmt> <title>Auf dem Hügel sitz ich spähend</title> <respStmt> <persName role="composer">Ludwig van Beethoven</persName> </respStmt> </titleStmt> <pubStmt/> </fileDesc> </meiHead> <music> <body> <mdiv> <score> <scoreDef key.sig="3f" key.mode="major"> <staffGrp> <staffDef n="1" xml:id="P1" label="Voice" lines="5" meter.count="3" meter.unit="4" clef.line="2" clef.shape="G" key.sig="3f" key.mode="major"/> </staffGrp> </scoreDef> <section> <measure n="1" xml:id="d1e136"> <staff n="1"> <layer n="1"> <rest xml:id="d1e176" dur="4"/> <note xml:id="d1e184" pname="b" oct="4" dur="4" > <verse> <syl>Auf</syl> </verse> </note> <note xml:id="d1e205" pname="b" oct="4" dur="4" > <verse> <syl>dem</syl> </verse> </note> </layer> </staff> <dir startid="#d1e176" tstamp="1" place="above" staff="1"> Ziemlich langsam und mit Ausdruck </dir> </measure> <measure n="2" xml:id="d1e475"> <staff n="1"> <layer n="1"> <note xml:id="d1e477" pname="b" oct="4" dur="4" dots="1" > <verse> <syl wordpos="i">Hü</syl> </verse> </note> <note xml:id="d1e499" pname="c" oct="5" dur="8"> <verse> <syl wordpos="t">gel</syl> </verse> </note> <beam> <note xml:id="d1e518" pname="d" oct="5" dur="8"> <verse> <syl>sitz</syl> </verse> </note> <note xml:id="d1e539" pname="e" oct="5" dur="8" > <verse> <syl>ich</syl> </verse> </note> </beam> </layer> </staff> </measure> </section> </score> </mdiv> </body> </music> </mei>';
-  parser=new DOMParser();
-  xmlDoc=parser.parseFromString(src,"text/xml");
-  var MEI = xmlDoc.getElementsByTagNameNS("http://www.music-encoding.org/ns/mei", 'score');
-  MEI2VF.render_notation(MEI, $("#MEI2VFexample canvas").get(0), 450, 200);
-</script>
-
-<pre><code>&lt;section&gt;
-  &lt;measure n="1" xml:id="d1e136"&gt;
-      &lt;staff n="1"&gt;
-          &lt;layer n="1"&gt;
-              &lt;rest xml:id="d1e176" dur="4"/&gt;
-              &lt;note xml:id="d1e184" pname="b" oct="4" dur="4"&gt;
-                  &lt;verse&gt;
-                      &lt;syl&gt;Auf&lt;/syl&gt;
-                  &lt;/verse&gt;
-              &lt;/note&gt;
-              &lt;note xml:id="d1e205" pname="b" oct="4" dur="4"&gt;
-                  &lt;verse&gt;
-                      &lt;syl&gt;dem&lt;/syl&gt;
-                  &lt;/verse&gt;
-              &lt;/note&gt;
-          &lt;/layer&gt;
-      &lt;/staff&gt;
-  &lt;/measure&gt;
-  &lt;measure n="2" xml:id="d1e475"&gt;
-      &lt;staff n="1"&gt;
-          &lt;layer n="1"&gt;
-              &lt;note pname="b" oct="4" dur="4" dots="1"&gt;
-                  &lt;verse&gt;
-                      &lt;syl wordpos="i"&gt;Hü&lt;/syl&gt;
-                  &lt;/verse&gt;
-              &lt;/note&gt;
-              &lt;note xml:id="d1e499" pname="c" oct="5" dur="8"&gt;
-                  &lt;verse&gt;
-                      &lt;syl wordpos="t"&gt;gel&lt;/syl&gt;
-                  &lt;/verse&gt;
-              &lt;/note&gt;
-              &lt;beam&gt;
-                  &lt;note xml:id="d1e518" pname="d" oct="5" dur="8"&gt;
-                      &lt;verse&gt;
-                          &lt;syl&gt;sitz&lt;/syl&gt;
-                      &lt;/verse&gt;
-                  &lt;/note&gt;
-                  &lt;note xml:id="d1e539" pname="e" oct="5" dur="8"&gt;
-                      &lt;verse&gt;
-                          &lt;syl&gt;ich&lt;/syl&gt;
-                      &lt;/verse&gt;
-                  &lt;/note&gt;
-              &lt;/beam&gt;
-          &lt;/layer&gt;
-      &lt;/staff&gt;
-  &lt;/measure&gt;
-&lt;/section&gt;
-</code></pre>
-
-<h3>
-<a name="projects-history" class="anchor" href="#projects-history"><span class="octicon octicon-link"></span></a>Project's history</h3>
-
-<p>This library was first created by <a href="https://github.com/ironchicken/MEItoVexFlow">Richard Lewis</a>, then expanded as part of the <a href="http://duchemin.haverford.edu/">Digital Du Chemin</a> project. Right now MEItoVexFlow is being improved on by <a href="https://github.com/zolaemil">Zoltán Kőmíves</a> thanks to sponsorship from Google Summer of Code awarded to the <a href="http://mith.umd.edu">Maryland Institute for Technology in the Humanities</a> (MITH).</p>
-
-<h3>
-<a name="why-mei" class="anchor" href="#why-mei"><span class="octicon octicon-link"></span></a>Why MEI?</h3>
-
-<p>The <a href="http://music-encoding.org">Music Encoding Initative</a> (MEI) maintains an XML-based format for representing music notation. This format stands out for its ability to model ambiguity in textual transcription, which is useful for encoding and digitally preserve manuscript notated music. MEI can also represent textual variants, which are crucial to critical editing and relevant to both musicological and performing musicians communities.</p>
-
-      </section>
-      <footer>
-        <p>This project is maintained by<br/><a href="https://github.com/raffazizzi">Raffaele Viglianti</a> and <a href="https://github.com/zolaemil">Zoltán Kőmíves</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-42659037-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+      </p>
+    </section>
+    <footer>
+      <p>This project is maintained by<br/><a href="https://github.com/raffazizzi">Raffaele Viglianti</a> and <a href="https://github.com/zolaemil">Zoltán Kőmíves</a></p>
+      <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </footer>
+  </div>
+  <script src="javascripts/scale.fix.js"></script>
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-42659037-1");
+    pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
 
   </body>
-</html>
+  </html>

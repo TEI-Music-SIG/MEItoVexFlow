@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title>44 Duos: No.23 Wedding Song</title>
+			</titleStmt>
+			<pubStmt>
+				<respStmt>
+					<resp>Prepared by</resp>
+					<persName>Zoltán Kőmíves</persName>
+				</respStmt>
+			</pubStmt>
+			<sourceDesc>
+				<source>
+					<titleStmt>
+						<title>44 DUOS</title>
+					</titleStmt>
+					<pubStmt>
+						<publisher>Universal Edition</publisher>
+					</pubStmt>
+				</source>
+			</sourceDesc>
+		</fileDesc>
+		<revisionDesc>
+			<change n="1">
+				<respStmt>
+					<persName>Zoltan Komives</persName>
+				</respStmt>
+				<changeDesc>
+					<p>Manually encoded from printed music</p>
+				</changeDesc>
+				<date>2013-08-01</date>
+			</change>
+		</revisionDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<scoreDef>
+						<staffGrp symbol="brace">
+								<staffDef n="1" label="Violin I." clef.line="2" clef.shape="G" meter.count="2" meter.unit="4" key.pname="d" key.mode="minor"/>
+								<staffDef n="2" label="Violin II." clef.line="2" clef.shape="G" meter.count="2" meter.unit="4" key.pname="d" key.mode="minor"/>
+						</staffGrp>
+					</scoreDef>
+					<section>
+						<measure n="1">
+							<staff n="1">
+								<layer>
+									<mRest/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<beam>
+										<note pname="d" oct="5" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="d" oct="5" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="d" oct="5" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="d" oct="5" dur="8">
+											<artic artic="ten" />
+										</note>
+									</beam>
+									<beam>
+										<note pname="c" oct="5" dur="8" stem.dir="down">
+											<artic artic="ten" />
+										</note>
+										<note pname="b" oct="4" dur="8" stem.dir="down">
+											<artic artic="ten" />
+										</note>
+										<note pname="a" oct="4" dur="8" stem.dir="down">
+											<artic artic="ten" />
+										</note>
+										<note pname="b" oct="4" dur="8" stem.dir="down">
+											<artic artic="ten" />
+										</note>
+									</beam>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="2">
+							<staff n="1">
+								<layer n="1">
+									<note pname="d" oct="5" dur="1"/>
+								</layer>
+								<layer n="2">
+									<note pname="d" oct="4" dur="1"/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<beam>
+										<note pname="c" oct="5" dur="8" stem.dir="up">
+											<artic artic="ten" />
+										</note>
+										<note pname="b" oct="4" dur="8" stem.dir="up">
+											<artic artic="ten" />
+										</note>
+										<note pname="a" oct="4" dur="8" stem.dir="up">
+											<artic artic="ten" />
+										</note>
+										<note pname="d" oct="4" dur="8" stem.dir="up" xml:id="m2n4" tie="i"/>
+									</beam>
+									<note pname="d" oct="4" dur="4" tie="t"/>
+									<note pname="a" oct="4" dur="8" xml:id="m2n6">
+										<artic artic="dot"/>
+									</note>
+									<rest dur="8"/>
+								</layer>
+							</staff>
+							<hairpin staff="2" form="dim" startid="m2n4" endid="m2n6"/>
+						</measure>
+						<scoreDef>
+							<staffGrp symbol="brace">
+									<staffDef n="1" label="Violin I." clef.line="2" clef.shape="G" meter.count="3" meter.unit="2" key.pname="d" key.mode="minor"/>
+									<staffDef n="2" label="Violin II." clef.line="2" clef.shape="G" meter.count="3" meter.unit="2" key.pname="d" key.mode="minor"/>
+							</staffGrp>
+						</scoreDef>
+						<measure n="3">
+							<staff n="1">
+								<layer n="1">
+									<note pname="e" oct="5" accid="f" dur="2" stem.dir="up" slur="i1"/>
+									<note pname="d" oct="5" dur="1" slur="t1"/>
+								</layer>
+								<layer n="2">
+									<note pname="d" oct="4" dur="1" dots="1"/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<note pname="g" oct="4" dur="4" dots="1"/>
+									<note pname="d" oct="4" dur="8"/>
+									<note pname="e" oct="4" dur="8"/>
+									<note pname="f" oct="4" dur="2" dots="2"/>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="4">
+							<staff n="1">
+								<layer n="1">
+									<note pname="c" oct="5" accid="s" dur="2" stem.dir="up" slur="i1"/>
+									<note pname="d" oct="5" dur="1" slur="t1"/>
+								</layer>
+								<layer n="2">
+									<note pname="d" oct="4" dur="1" dots="1"/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<note pname="c" oct="5" dur="4" dots="1"/>
+									<note pname="b" oct="4" dur="8"/>
+									<note pname="a" oct="4" dur="8"/>
+									<note pname="d" oct="4" dur="4" dots="1" tie="i"/>
+									<note pname="d" oct="4" dur="4" tie="t"/>
+									<note pname="a" oct="4" dur="8">
+										<artic artic="dot"/>
+									</note>
+									<rest dur="8"/>
+								</layer>
+							</staff>
+						</measure>
+						<sb/>
+						<measure n="5">
+							<staff n="1">
+								<layer n="1">
+									<note pname="e" oct="5" accid="f" dur="2" stem.dir="up" slur="i1"/>
+									<note pname="b" oct="4" dur="1" slur="t1"/>
+								</layer>
+								<layer n="2">
+									<note pname="d" oct="4" dur="1" dots="1"/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<note pname="g" oct="4" dur="4"/>
+									<note pname="d" oct="4" dur="4"/>
+									<note pname="e" oct="4" dur="8"/>
+									<note pname="f" oct="4" dur="2" dots="2"/>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="6">
+							<staff n="1">
+								<layer n="1">
+									<note pname="b" oct="4" accid="n" dur="1" slur="i1"/>
+									<note pname="c" oct="5" accid="s" dur="2" stem.dir="up" slur="t1"/>
+								</layer>
+								<layer n="2">
+									<note pname="d" oct="4" dur="1" dots="1"/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<note pname="b" oct="4" accid="f" dur="4"/>
+									<note pname="a" oct="4" dur="4"/>
+									<note pname="g" oct="4" dur="2" dots="1"/>
+									<note pname="a" oct="4" dur="4"/>
+								</layer>
+							</staff>
+						</measure>
+						<scoreDef>
+							<staffGrp symbol="brace">
+									<staffDef n="1" label="Violin I." clef.line="2" clef.shape="G" meter.count="2" meter.unit="2" key.pname="d" key.mode="minor"/>
+									<staffDef n="2" label="Violin II." clef.line="2" clef.shape="G" meter.count="2" meter.unit="2" key.pname="d" key.mode="minor"/>
+							</staffGrp>
+						</scoreDef>
+						<measure n="7">
+							<staff n="1">
+								<layer>
+									<chord>
+										<note pname="a" oct="4" dur="1"/>
+										<note pname="g" oct="4" dur="1"/>
+									</chord>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<note pname="g" oct="4" dur="8">
+										<artic artic="dot"/>
+									</note>
+									<note pname="d" oct="4" dur="2" dots="2"/>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="8">
+							<staff n="1">
+								<layer>
+									<beam>
+										<chord>
+											<note pname="d" oct="5" dur="8"/>
+											<note pname="d" oct="4" dur="8">
+												<artic artic="acc"/>
+											</note>
+										</chord>
+										<chord>
+											<note pname="a" oct="4" dur="8"/>
+											<note pname="f" oct="4" accid="s" dur="8">
+												<artic artic="dot"/>
+											</note>
+										</chord>
+									</beam>
+									<rest dur="4"/>
+									<rest dur="2"/>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<note pname="d" oct="4" dur="8">
+										<artic artic="acc"/>
+									</note>
+									<note pname="d" oct="4" dur="8">
+										<artic artic="dot"/>
+									</note>
+									<rest dur="4"/>
+									<rest dur="2"/>
+								</layer>
+							</staff>
+						</measure>
+						<measure n="9">
+							<staff n="1">
+								<layer>
+									<rest dur="2"/>
+									<chord>
+										<note pname="a" oct="4" dur="2" tie="i"/>
+										<note pname="g" oct="4" dur="2" tie="i"/>
+									</chord>
+								</layer>
+							</staff>
+							<staff n="2">
+								<layer>
+									<beam>
+										<note pname="g" oct="4" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="g" oct="4" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="g" oct="4" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="g" oct="4" dur="8">
+											<artic artic="ten" />
+										</note>
+									</beam>
+									<beam>
+										<note pname="f" oct="4" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="e" oct="4" accid="f" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="d" oct="4" dur="8">
+											<artic artic="ten" />
+										</note>
+										<note pname="e" oct="4" dur="8">
+											<artic artic="ten" />
+										</note>
+									</beam>
+								</layer>
+							</staff>
+						</measure>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

@@ -12,19 +12,11 @@ version="HTML+RDFa 1.0" xml:lang="en">
 	<head>
 		<title>MEI-to-VexFlow Test Page</title>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/JavaScript" src="../../vexflow/build/vexflow/vexflow-min.js"></script>
-		<script type="text/JavaScript" src="../tables.js"></script>
-		<script type="text/JavaScript" src="../meilib.js"></script>
-		<script type="text/JavaScript" src="../meitovexflow.js"></script>
-		<script type="text/JavaScript" src="../EventLink.js"></script>
-		<script type="text/JavaScript" src="../EventReference.js"></script>
-		<script type="text/JavaScript" src="../StaffInfo.js"></script>
-		<script type="text/JavaScript" src="../StaveConnector.js"></script>
-<!--    <script type="text/JavaScript" src="../build/meitovexflow-min.js"></script> -->
-		<script type="text/JavaScript" src="../StaveVoices.js"></script>
-		<script type="text/JavaScript" src="loadxmldoc.js"></script>
-		<script type="text/JavaScript" src="runtest.js"></script>   
+		<script type="text/JavaScript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/JavaScript" src="../bower_components/vexflow/build/vexflow/vexflow-min.js"></script>
+		<script type="text/JavaScript" src="../dist/meitovexflow.js"></script>
+		<script type="text/JavaScript" src="loadXMLDoc.js"></script>
+		<script type="text/JavaScript" src="runtest.js"></script>  
 		<script type="text/JavaScript">
 			var testItem_html = "<h2><span class='test-title' property='dc:title'>Title of Test Comes Here</span></h2><div class='a'><canvas width='1031' height='450' style='border: none'></canvas></div>"
 			Vex.LogLevel = 5;
@@ -82,7 +74,8 @@ version="HTML+RDFa 1.0" xml:lang="en">
 				test_cases.push({ title: "Clef - Transposed treble clef (with stem directions)", mei_xml: 'TC.VexClef.06.xml'});
 				test_cases.push({ title: "Plain Staff", mei_xml: 'TC.PlainStaff.xml'});
 				
-				test_cases.push({ title: "Bar lines", mei_xml: 'TC.BarLines.xml'});
+				// Missing?
+				//test_cases.push({ title: "Bar lines", mei_xml: 'TC.BarLines.xml'});
 				
 				//Test cases that are supposed to generate error messages on the console:
 				//  test_cases.push({ title: 'Missing_Attribute_Test_Case', mei_xml: 'TC.MissingAttribute.xml'});

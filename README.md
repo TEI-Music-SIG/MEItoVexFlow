@@ -1,13 +1,22 @@
-MEItoVexFlow
-============
+# MEItoVexFlow
 
 A JavaScript library which provides a function for converting MEI
 <http://music-encoding.org/> encoded music notation into drawing
 instructions for the VexFlow <http://vexflow.com/> music notation
 rendering library.
 
-Usage
------
+## Build
+
+To build MEItoVexFlow, you'll need Node.js and npm. In the main directory run:
+
+`$ npm install`
+`$ bower install`
+
+...and you're set! Now, to build run:
+
+`$ grunt`
+
+## Usage
 
 The library provides the function `render_notation` which takes four
 arguments:
@@ -23,8 +32,7 @@ arguments:
 
 For sample function calls see the test cases in the 'tests' directory! 
 
-MeiLib.js
---------- 
+## MeiLib.js 
 
 A JavaScript library offering methods to manipulate MEI.
 
@@ -36,8 +44,7 @@ Critical Apparatus MEI module.
 For more information about the functions in MeiLib.js see the documentation 
 comments within the source file meilib.js
 
-Dependencies
-------------
+## Dependencies
 
  - Any browser in which this code is used must have the VexFlow and
    jQuery libraries loaded.
@@ -47,8 +54,7 @@ Dependencies
    its own, simply download or reference the meilib.js file!
 
 
-Limitations
------------
+## Limitations
 
 Only a small subset of MEI has so far been implemented. Many
 conventional aspects of common practice notation have been ignored
@@ -56,9 +62,11 @@ conventional aspects of common practice notation have been ignored
 remember that VexFlow is a moving target, it's in constant development
 and so this code could break at any time.
 
+## Contributing
 
-Licence
--------
+If you'd like to contribute to MEItoVexFlow, please do! This project is young and there is a lot to fix, so we don't have real style guidelines for now. However, before sending a pull request, make sure that the tests are still working. 
+
+## Licence
 
 Copyright © 2012, 2013 Richard Lewis, Raffaele Viglianti, Zoltan Komives,
 University of Maryland

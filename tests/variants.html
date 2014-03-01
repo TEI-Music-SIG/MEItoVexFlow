@@ -12,18 +12,10 @@ version="HTML+RDFa 1.0" xml:lang="en">
 	<head>
 		<title>MEI-to-VexFlow Test Page</title>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<!--		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
-		<script src="../support/jquery-1.7.1.min.js"></script>
-		<script type="text/JavaScript" src="../../vexflow/build/vexflow/vexflow-min.js"></script>
-		<script type="text/JavaScript" src="../tables.js"></script>
-		<script type="text/JavaScript" src="../meilib.js"></script>
-		<script type="text/JavaScript" src="../meitovexflow.js"></script>
-		<script type="text/JavaScript" src="../EventLink.js"></script>
-		<script type="text/JavaScript" src="../EventReference.js"></script>
-		<script type="text/JavaScript" src="../StaffInfo.js"></script>
-		<script type="text/JavaScript" src="../StaveConnector.js"></script>
-		<script type="text/JavaScript" src="../StaveVoices.js"></script>
-		<script type="text/JavaScript" src="loadxmldoc.js"></script>
+		<script type="text/JavaScript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/JavaScript" src="../bower_components/vexflow/build/vexflow/vexflow-min.js"></script>
+		<script type="text/JavaScript" src="../dist/meitovexflow.js"></script>
+		<script type="text/JavaScript" src="loadXMLDoc.js"></script>
 		<script type="text/JavaScript" src="runtest.js"></script>   
 		<script type="text/JavaScript">
 
@@ -65,7 +57,7 @@ version="HTML+RDFa 1.0" xml:lang="en">
 			$(document).ready(function(){
 
 				var variant_mei = loadXMLDoc('TC.Isaac.xml');
-				var Apps = MeiLib.parseAPPs(variant_mei);
+				var Apps = MeiLib.VariantMEI.parseAPPs(variant_mei);
 				console.log('JS Object:');
 				console.log(Apps);
 

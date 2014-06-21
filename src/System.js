@@ -178,6 +178,7 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
             measures[i].format(offsetX, labels);
             offsetX += measures[i].w;
           }
+          measures[i].addRehearsalMarks();
           measures[i].addTempoToStaves();
         }
         return me;

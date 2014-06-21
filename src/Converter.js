@@ -595,7 +595,7 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
         left_barline = element.getAttribute('left');
         right_barline = element.getAttribute('right');
 
-        var staffElements = [], dirElements = [], slurElements = [], tieElements = [], hairpinElements = [], tempoElements = [], dynamElements = [], fermataElements = [];
+        var staffElements = [], dirElements = [], slurElements = [], tieElements = [], hairpinElements = [], tempoElements = [], dynamElements = [], fermataElements = [], rehElements = [];
 
         $(element).find('*').each(function() {
           switch (this.localName) {
@@ -622,6 +622,9 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
               break;
             case 'fermata':
               fermataElements.push(this);
+              break;
+            case 'reh':
+              rehElements.push(this);
               break;
             default:
               break;
@@ -669,6 +672,7 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
             barline_r : right_barline
           },
           tempoElements : tempoElements,
+          rehElements : rehElements,
           tempoFont : me.cfg.tempoFont
         }));
       },
@@ -1044,9 +1048,9 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
           }
 
           // FIXME For now, we'll remove any child nodes of <note>
-          $.each($(element).children(), function() {
-            $(this).remove();
-          });
+          // $.each($(element).children(), function() {
+          // $(this).remove();
+          // });
 
           // Build a note object that keeps the xml:id
 
@@ -1085,7 +1089,7 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
       processChord : function(element, staff, staff_n) {
         var me = this, i, j, hasDots, $children, keys = [], duration, durations = [], durAtt, xml_id, chord, chord_opts, atts;
 
-        $children = $(element).children();
+        $children = $(element).children('note');
 
         atts = m2v.Util.attsToObj(element);
         durAtt = atts.dur;
@@ -1098,12 +1102,14 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
 
         try {
           if (durAtt) {
-            duration = me.translateDuration(+durAtt);
+            duration = me.translateDuration(durAtt);
           } else {
             for ( i = 0, j = $children.length; i < j; i += 1) {
-              durations.push(+$children[i].getAttribute('dur'));
+              durations.push(+me.translateDuration($children[i].getAttribute('dur')));
+
             }
-            duration = me.translateDuration(Math.max.apply(Math, durations));
+            // get maximum note length (= minimum duration value)
+            duration = Math.min.apply(Math, durations) + '';
           }
 
           for ( i = 0, j = $children.length; i < j; i += 1) {
@@ -1139,6 +1145,9 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
           if (atts.ho) {
             me.processAttrHo(atts.ho, chord, staff);
           }
+          $.each($(element).find('artic'), function() {
+            me.addArticulation(chord, this);
+          });
           if (atts.fermata) {
             me.fermatas.addFermataToNote(chord, atts.fermata);
           }
@@ -1157,12 +1166,11 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
             id : xml_id
           };
         } catch (e) {
-          throw new m2v.RUNTIME_ERROR('BadArguments', 'A problem occurred processing the <chord>:' + e.toString());
-          // 'A problem occurred processing the <chord>: ' +
-          // JSON.stringify($.each($(element).children(), function(i,
-          // element) {
-          // element.attrs();
-          // }).get()) + '. \"' + x.toString() + '"');
+          var childStrings =
+            $(element).children().map(function() {
+            return '\n    <' + this.localName + m2v.Util.attsToString(this) + '/>';
+          }).get().join('');
+          throw new m2v.RUNTIME_ERROR('BadArguments', 'A problem occurred processing \n<chord' + m2v.Util.attsToString(element) + '>' + childStrings + '\n</chord>\nORIGINAL ERROR MESSAGE: ' + e.toString());
         }
       },
 

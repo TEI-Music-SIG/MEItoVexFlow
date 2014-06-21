@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../odd/mei2vexflow.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../odd/mei2vexflow.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title>MeiToVexFlow Articulations Test Case</title>
+            </titleStmt>
+            <pubStmt>
+                <respStmt>
+                    <resp>Prepared by</resp>
+                    <persName>Alexander Erhard</persName>
+                </respStmt>
+            </pubStmt>
+        </fileDesc>
+    </meiHead>
+    <music>
+        <body>
+            <mdiv>
+                <score>
+                    <scoreDef>
+                        <staffGrp>
+                            <staffDef n="1" lines="5" clef.line="2" clef.shape="G" meter.count="4" meter.unit="4"/>
+                            <staffDef n="2" lines="5" clef.line="2" clef.shape="G" meter.count="4" meter.unit="4"
+                                      spacing="130"/>
+                        </staffGrp>
+                    </scoreDef>
+                    <section>
+                        <measure n="1">
+                            <staff n="1">
+                                <layer>
+                                    <note pname="c" oct="4" dur="16">
+                                        <artic artic="acc"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="16">
+                                        <artic artic="stacc"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="16">
+                                        <artic artic="ten"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="16">
+                                        <artic artic="stacciss"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="marc"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="dnbow"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="upbow"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="snap"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="lhpizz"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="dot"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="stroke"/>
+                                    </note>
+                                </layer>
+                            </staff>
+                            <staff n="2">
+                                <layer n="1">
+                                    <chord stem.dir="up">
+                                        <note pname="c" oct="5" dur="4"/>
+                                        <note pname="d" oct="5" dur="4"/>
+                                        <artic artic="ten" place="above"/>
+                                    </chord>
+                                    <chord stem.dir="up">
+                                        <note pname="c" oct="5" dur="4"/>
+                                        <note pname="d" oct="5" dur="4"/>
+                                        <artic artic="ten" place="above"/>
+                                    </chord>
+                                    <chord stem.dir="up">
+                                        <note pname="c" oct="5" dur="4"/>
+                                        <note pname="d" oct="5" dur="4"/>
+                                        <artic artic="ten" place="above"/>
+                                    </chord>
+                                    <chord stem.dir="up">
+                                        <note pname="c" oct="5" dur="4"/>
+                                        <note pname="d" oct="5" dur="4"/>
+                                        <artic artic="ten" place="above"/>
+                                    </chord>
+                                </layer>
+                                <layer n="2">
+                                    <note pname="d" oct="4" dur="4" stem.dir="down">
+                                        <artic artic="acc"/>
+                                    </note>
+                                    <note pname="d" oct="4" dur="4" stem.dir="down">
+                                        <artic artic="acc"/>
+                                    </note>
+                                    <note pname="d" oct="4" dur="4" stem.dir="down">
+                                        <artic artic="acc"/>
+                                    </note>
+                                    <note pname="d" oct="4" dur="4" stem.dir="down">
+                                        <artic artic="acc"/>
+                                    </note>
+                                </layer>
+                            </staff>
+                            <reh staff="1">127</reh>
+                        </measure>
+
+                        <measure n="2">
+                            <staff n="1">
+                                <layer>
+                                    <note pname="c" oct="4" dur="16">
+                                        <artic artic="acc"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="16">
+                                        <artic artic="stacc"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="16">
+                                        <artic artic="ten"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="16">
+                                        <artic artic="stacciss"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="marc"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="dnbow"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="upbow"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="snap"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="lhpizz"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="dot"/>
+                                    </note>
+                                    <note pname="c" oct="4" dur="8">
+                                        <artic artic="stroke"/>
+                                    </note>
+                                </layer>
+                            </staff>
+                            <staff n="2">
+                                <layer n="1">
+                                    <chord stem.dir="up">
+                                        <note pname="c" oct="5" dur="4"/>
+                                        <note pname="d" oct="5" dur="4"/>
+                                        <artic artic="ten" place="above"/>
+                                    </chord>
+                                    <chord stem.dir="up">
+                                        <note pname="c" oct="5" dur="4"/>
+                                        <note pname="d" oct="5" dur="4"/>
+                                        <artic artic="ten" place="above"/>
+                                    </chord>
+                                    <chord stem.dir="up">
+                                        <note pname="c" oct="5" dur="4"/>
+                                        <note pname="d" oct="5" dur="4"/>
+                                        <artic artic="ten" place="above"/>
+                                    </chord>
+                                    <chord stem.dir="up">
+                                        <note pname="c" oct="5" dur="4"/>
+                                        <note pname="d" oct="5" dur="4"/>
+                                        <artic artic="ten" place="above"/>
+                                    </chord>
+                                </layer>
+                                <layer n="2">
+                                    <note pname="d" oct="4" dur="4" stem.dir="down">
+                                        <artic artic="acc"/>
+                                    </note>
+                                    <note pname="d" oct="4" dur="4" stem.dir="down">
+                                        <artic artic="acc"/>
+                                    </note>
+                                    <note pname="d" oct="4" dur="4" stem.dir="down">
+                                        <artic artic="acc"/>
+                                    </note>
+                                    <note pname="d" oct="4" dur="4" stem.dir="down">
+                                        <artic artic="acc"/>
+                                    </note>
+                                </layer>
+                            </staff>
+                            <reh staff="2">A</reh>
+                        </measure>
+                    </section>
+                </score>
+            </mdiv>
+        </body>
+    </music>
+</mei>

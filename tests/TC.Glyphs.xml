@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../odd/mei2vexflow.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../odd/mei2vexflow.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<mei meiversion="2013" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns="http://www.music-encoding.org/ns/mei" xmlns:mei="http://www.music-encoding.org/ns/mei">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title>MeiToVexFlow Extra Glyphs Test Case</title>
+			</titleStmt>
+			<pubStmt>
+				<respStmt>
+					<resp>Prepared by</resp>
+					<persName>Alexander Erhard</persName>
+				</respStmt>
+			</pubStmt>
+		</fileDesc>
+	</meiHead>
+    <music>
+        <body>
+            <mdiv>
+                <score>
+                    <scoreDef>
+                        <staffGrp>
+                            <staffDef n="1" lines="5" clef.line="2" clef.shape="G" meter.count="4" meter.unit="1"/>
+                            <staffDef n="2" lines="5" clef.line="2" clef.shape="G" meter.count="4" meter.unit="1"/>
+                        </staffGrp>
+                    </scoreDef>
+                    <section>
+                        <measure n="1">
+                            <staff n="1">
+                                <layer n="1">
+                                    <note pname="g" oct="4" dur="long"/>
+                                </layer>
+                            </staff>
+                            <staff n="2">
+                                <layer n="1">
+                                    <rest dur="long"/>
+                                </layer>
+                            </staff>
+                        </measure>
+                        <measure n="2">
+                            <staff n="1">
+                                <layer n="1">
+                                    <note pname="f" oct="4" dur="1"/>
+                                    <note pname="d" oct="4" dur="1"/>
+                                    <chord>
+                                        <note pname="e" oct="4" dur="breve"/>
+                                        <note pname="c" oct="5" dur="breve" accid="s"/>
+                                    </chord>
+                                </layer>
+                            </staff>
+                            <staff n="2">
+                                <layer n="1">
+                                    <rest dur="breve"/>
+                                    <rest dur="breve"/>
+                                </layer>
+                            </staff>
+                        </measure>
+                        <measure n="3">
+                            <staff n="1">
+                                <layer n="1">
+                                    <chord dur="long">
+                                        <note pname="d" oct="4"/>
+                                        <note pname="d" oct="5"/>
+                                    </chord>
+                                </layer>
+                            </staff>
+                            <staff n="2">
+                                <layer n="1">
+                                    <rest dur="long"/>
+                                </layer>
+                            </staff>
+                        </measure>
+                        <!--<measure n="4">-->
+                            <!--<staff n="1">-->
+                                <!--<layer n="1">-->
+                                    <!--<chord dur="breve">-->
+                                        <!--<note pname="c" oct="4"/>-->
+                                        <!--<note pname="g" oct="4"/>-->
+                                        <!--<note pname="c" oct="5"/>-->
+                                    <!--</chord>-->
+                                    <!--<chord dur="breve">-->
+                                        <!--<note pname="c" oct="4"/>-->
+                                        <!--<note pname="g" oct="4"/>-->
+                                        <!--<note pname="c" oct="5"/>-->
+                                    <!--</chord>-->
+                                <!--</layer>-->
+                            <!--</staff>-->
+                            <!--<staff n="2">-->
+                                <!--<layer n="1">-->
+                                    <!--<rest dur="breve"/>-->
+                                    <!--<rest dur="breve"/>-->
+                                <!--</layer>-->
+                            <!--</staff>-->
+                        <!--</measure>-->
+
+                    </section>
+                </score>
+            </mdiv>
+        </body>
+    </music>
+</mei>

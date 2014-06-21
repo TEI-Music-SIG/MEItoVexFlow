@@ -66,6 +66,11 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
          */
         me.tempoFont = config.tempoFont;
         /**
+         * @cfg {XMLElement[]} rehElements the MEI rehearsal mark elements in the
+         * current measure
+         */
+        me.rehElements = config.rehElements;
+        /**
          * @property {Number} maxNoteStartX the maximum note_start_x value of all
          * Vex.Flow.Stave objects in the current measure
          */
@@ -131,6 +136,20 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
           }
         }
         throw new m2v.RUNTIME_ERROR('ERROR', 'getFirstDefinedStaff(): no staff found in the current measure.');
+      },
+
+      /**
+       * Adds rehearsal marks encoded in reh elements in the current measure to
+       * the corresponding Vex.Flow.Stave object
+       */
+      addRehearsalMarks : function() {
+        var me = this, staff_n, vexStaff, offsetX;
+        $.each(me.rehElements, function() {
+          staff_n = this.getAttribute('staff');
+          vexStaff = me.staffs[staff_n];
+          offsetX = (vexStaff.getModifierXShift() > 0) ? -40 : 0;
+          vexStaff.modifiers.push(new Vex.Flow.StaveSection($(this).text(), vexStaff.x + offsetX, 0));
+        });
       },
 
       // TODO handle timestamps! (is it necessary to handle tempo element

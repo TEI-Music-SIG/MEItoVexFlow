@@ -45,6 +45,18 @@
                                 </layer>
                             </staff>
                         </measure>
+                        <scoreDef>
+                            <staffGrp>
+                                <staffDef n="1" lines="5" clef.line="2" clef.shape="G" meter.count="4" meter.unit="2"/>
+                            </staffGrp>
+                        </scoreDef>
+                        <measure n="3">
+                            <staff n="1">
+                                <layer n="1">
+                                    <mRest/>
+                                </layer>
+                            </staff>
+                        </measure>
                         <sb/>
                     </section>
                 </score>

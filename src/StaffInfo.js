@@ -133,17 +133,17 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
         clef_dis = me.staffDefObj['clef.dis'];
         clef_dis_place = me.staffDefObj['clef.dis.place'];
         if (clef_shape === 'G' && (!clef_line || clef_line === '2')) {
-          if (clef_dis === '8' && clef_dis_place === 'below' && VF.clefProperties.values.octave != undefined) {
-            return 'octave';
+          if (clef_dis === '8' && clef_dis_place === 'below') {
+            return {type: 'treble', shift : -1};
           }
-          return 'treble';
+          return {type: 'treble'};
         }
         if (clef_shape === 'F' && (!clef_line || clef_line === '4'))
-          return 'bass';
+          return {type: 'bass'};
         if (clef_shape === 'C' && clef_line === '3')
-          return 'alto';
+          return {type: 'alto'};
         if (clef_shape === 'C' && clef_line === '4')
-          return 'tenor';
+          return {type: 'tenor'};
         throw new m2v.RUNTIME_ERROR('MEI2VF.RERR.NotSupported', 'Clef definition is not supported: [ clef.shape="' + clef_shape + '" ' + ( clef_line ? ('clef.line="' + clef_line + '"') : '') + ' ]');
       },
 

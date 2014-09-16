@@ -95,7 +95,12 @@ version="HTML+RDFa 1.0" xml:lang="en">
   <script src="../bower_components/vexflow/src/gracenote.js"></script>
   <script src="../bower_components/vexflow/src/gracenotegroup.js"></script>
   <script src="../bower_components/vexflow/src/curve.js"></script>
-
+  <script src="../bower_components/vexflow/src/staveline.js"></script>
+  <script src="../bower_components/vexflow/src/crescendo.js"></script>
+  <script src="../bower_components/vexflow/src/ornament.js"></script>
+  <script src="../bower_components/vexflow/src/pedalmarking.js"></script>
+  <script src="../bower_components/vexflow/src/textbracket.js"></script>
+  <script src="../bower_components/vexflow/src/textdynamics.js"></script>
 
   <!-- <script type="text/JavaScript" src="../dist/meitovexflow.js"></script>
     -->  
@@ -158,8 +163,8 @@ version="HTML+RDFa 1.0" xml:lang="en">
       test_cases.push({ title: "Hairpins (startid/endid tstamp/tstamp2)", mei_xml: 'TC.Hairpins.xml'});
       test_cases.push({ title: "System breaks: two systems", mei_xml: 'TC.SystemBreak.01.xml', canvas_height:250});
       test_cases.push({ title: "System breaks: many systems", mei_xml: 'TC.SystemBreak.xml', canvas_height:700});
-      test_cases.push({ title: "System breaks: multi-staff", mei_xml: 'TC.SystemBreak.02.xml', canvas_width:1300, canvas_height:700});        
-      test_cases.push({ title: "System breaks: ties, slurs", mei_xml: 'TC.SystemBreak.03.xml', canvas_height:450});        
+      test_cases.push({ title: "System breaks: multi-staff", mei_xml: 'TC.SystemBreak.02.xml', canvas_width:1300, canvas_height:700});
+      test_cases.push({ title: "System breaks: ties, slurs", mei_xml: 'TC.SystemBreak.03.xml', canvas_height:450});
       test_cases.push({ title: "Changing StaffDef: Clef", mei_xml: 'TC.StaffChange.01.xml'});
       test_cases.push({ title: "Changing StaffDef: Celf+Key", mei_xml: 'TC.StaffChange.02.xml'});
       test_cases.push({ title: "Changing StaffDef: Meter", mei_xml: 'TC.StaffChange.03.xml'});
@@ -177,7 +182,7 @@ version="HTML+RDFa 1.0" xml:lang="en">
       test_cases.push({ title: "Adjusting Voices 1", mei_xml: 'TC.StaveVoices.01.xml', canvas_height:400});
       test_cases.push({ title: "Adjusting Voices 2", mei_xml: 'TC.StaveVoices.02.xml', canvas_height:450});
       test_cases.push({ title: "Space element", mei_xml: 'TC.Space.xml', canvas_height:400});
-      
+
       /* the following xml file is missing: */
       //test_cases.push({ title: "Single Variant-Path with Processing Instructions", mei_xml: 'TC.SingleVariantPath.xml', canvas_height:400});
       test_cases.push({ title: "Clef - Tenor clef (with stem directions)", mei_xml: 'TC.VexClef.05.xml'});
@@ -194,10 +199,10 @@ version="HTML+RDFa 1.0" xml:lang="en">
           labelMode: 'full'
         }
       });
-      test_cases.push({ 
-        title: "Page Layout, automatic measure width calculation", 
+      test_cases.push({
+        title: "Page Layout, automatic measure width calculation",
         mei_xml: 'TC.PageLayoutAutoWidths.xml',
-        canvas_width: 1600, 
+        canvas_width: 1600,
         canvas_height:2700,
         options: {
           labelMode: 'full',
@@ -228,7 +233,7 @@ version="HTML+RDFa 1.0" xml:lang="en">
       var title_elements = new Array();
 
       /**
-       * create as many canvases and title elements as test cases... 
+       * create as many canvases and title elements as test cases...
        */
       $(test_cases).each( function(index) {
         $('div.test-page').append(testItem_html);

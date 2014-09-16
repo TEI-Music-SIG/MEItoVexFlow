@@ -40,8 +40,8 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
       },
 
       durations : {
-        'long' : 'l',
-        'breve' : 'd',
+        'long' : '1/4',
+        'breve' : '1/2',
         '1' : 'w',
         '2' : 'h',
         '4' : 'q',

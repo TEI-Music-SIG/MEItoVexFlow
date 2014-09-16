@@ -759,10 +759,11 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
        * @param {Number} staff_n the staff number
        */
       addStaffClef : function(staff, staff_n) {
-        var me = this, currentStaffInfo;
+        var me = this, currentStaffInfo, clef;
         currentStaffInfo = me.systemInfo.getStaffInfo(staff_n);
         if (currentStaffInfo.showClefCheck()) {
-          staff.addClef(currentStaffInfo.getClef());
+          clef = currentStaffInfo.getClef();
+          staff.addClef(clef.type, clef.size, clef.shift === -1 ? '8vb' : undefined);
         }
       },
 
@@ -959,7 +960,7 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
        * @method processNote
        */
       processNote : function(element, staff, staff_n) {
-        var me = this, dots, mei_accid, mei_ho, pname, oct, xml_id, mei_tie, mei_slur, mei_staff_n, i, atts, note_opts, note;
+        var me = this, dots, mei_accid, mei_ho, pname, oct, xml_id, mei_tie, mei_slur, mei_staff_n, i, atts, note_opts, note, clef;
 
         atts = m2v.Util.attsToObj(element);
 
@@ -976,10 +977,13 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
 
         try {
 
+          clef = me.systemInfo.getClef(staff_n);
+
           note_opts = {
             keys : [me.processAttsPitch(element)],
-            clef : me.systemInfo.getClef(staff_n),
-            duration : me.processAttsDuration(element)
+            clef : clef.type,
+            duration : me.processAttsDuration(element),
+            octave_shift : clef.shift
           };
 
           me.setStemDir(element, note_opts);
@@ -1056,7 +1060,7 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
        * @method processChord
        */
       processChord : function(element, staff, staff_n) {
-        var me = this, i, j, hasDots, children, keys = [], duration, durations = [], durAtt, xml_id, chord, chord_opts, atts;
+        var me = this, i, j, hasDots, children, keys = [], duration, durations = [], durAtt, xml_id, chord, chord_opts, atts, clef;
 
         children = $(element).children();
 
@@ -1087,10 +1091,13 @@ var MEI2VF = ( function(m2v, MeiLib, VF, $, undefined) {
           if (hasDots)
             duration += 'd';
 
+          clef = me.systemInfo.getClef(staff_n);
+
           chord_opts = {
             keys : keys,
-            clef : me.systemInfo.getClef(staff_n),
-            duration : duration
+            clef : clef.type,
+            duration : duration,
+            octave_shift : clef.shift
           };
 
           me.setStemDir(element, chord_opts);

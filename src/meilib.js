@@ -173,7 +173,7 @@ MeiLib.EventEnumerator.prototype.step_ahead = function() {++this.i_next;
  */
 MeiLib.durationOf = function(evnt, meter) {
 
-  IsSimpleEvent = function(tagName) {
+  var IsSimpleEvent = function(tagName) {
     return (tagName === 'note' || tagName === 'rest' || tagName === 'space');
   }
   var durationOf_SimpleEvent = function(simple_evnt, meter) {
@@ -294,8 +294,8 @@ MeiLib.tstamp2id = function(tstamp, layer, meter) {
     ts_acc += MeiLib.durationOf(evnt, meter) 
       * eventList.outputProportion.numbase 
       / eventList.outputProportion.num;
-    m = meter;
-    e = evnt;
+//    m = meter;
+//    e = evnt;
   }
 
   if (dist === undefined)
@@ -326,7 +326,7 @@ MeiLib.tstamp2id = function(tstamp, layer, meter) {
  * @return {String} the xml:id of the element
  */
 MeiLib.XMLID = function(elem) {
-  xml_id = $(elem).attr('xml:id');
+  var xml_id = $(elem).attr('xml:id');
   if (!xml_id) {
     xml_id = MeiLib.createPseudoUUID();
     $(elem).attr('xml:id', xml_id);

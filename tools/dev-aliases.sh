@@ -1,0 +1,10 @@
+#!/bin/sh
+alias h='cd $M2V_HOME'
+alias b='h;grunt'
+alias gs='git status'
+alias gc='git commit -a'
+alias ga='git add .'
+alias gm='git commit -m'
+alias gp='git push'
+alias gg='git pull'
+alias s='python -m SimpleHTTPServer 8080 &'

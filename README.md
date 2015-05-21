@@ -1,7 +1,3 @@
-## Note
-
-Note: This repo currently contains adjustments to MEItoVexFlow to support better implementation of features of the [MEI Snippet Viewer](http://aerhard.github.io/meisnippetviewer/) component. For the main branch of MEItoVexFlow, see http://tei-music-sig.github.io/MEItoVexFlow/
-
 # MEItoVexFlow
 
 A JavaScript library which provides a function for converting MEI
